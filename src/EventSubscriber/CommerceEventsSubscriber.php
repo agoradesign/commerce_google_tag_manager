@@ -10,7 +10,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\state_machine\Event\WorkflowTransitionEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 /**
  * Event handler for commerce related events.
@@ -72,10 +72,10 @@ class CommerceEventsSubscriber implements EventSubscriberInterface {
   /**
    * Track the "productView" event.
    *
-   * @param \Symfony\Component\HttpKernel\Event\GetResponseEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
    *   The event to view the product.
    */
-  public function trackProductView(GetResponseEvent $event) {
+  public function trackProductView(RequestEvent $event) {
     $product = $this->routeMatch->getParameter('commerce_product');
     if ($event->getRequest()->getMethod() === 'GET' && !empty($product) && $this->routeMatch->getRouteName() === 'entity.commerce_product.canonical') {
       $default_variation = $product->getDefaultVariation();

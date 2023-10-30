@@ -238,7 +238,7 @@ class EventTrackerService {
 
     // Throw an event to add possible checkout step options by event listeners.
     $event = new TrackCheckoutStepEvent($step_index, $order);
-    $this->eventDispatcher->dispatch(EnhancedEcommerceEvents::TRACK_CHECKOUT_STEP, $event);
+    $this->eventDispatcher->dispatch($event, EnhancedEcommerceEvents::TRACK_CHECKOUT_STEP);
   }
 
   /**
@@ -318,7 +318,7 @@ class EventTrackerService {
         ->setPrice(self::formatPrice((float) $order_item->getTotalPrice()->getNumber()));
 
       $event = new AlterProductPurchasedEntityEvent($product, $order_item, $purchased_entity);
-      $this->eventDispatcher->dispatch(EnhancedEcommerceEvents::ALTER_PRODUCT_PURCHASED_ENTITY, $event);
+      $this->eventDispatcher->dispatch($event, EnhancedEcommerceEvents::ALTER_PRODUCT_PURCHASED_ENTITY);
     }
 
     return $product;
@@ -350,7 +350,7 @@ class EventTrackerService {
     }
 
     $event = new AlterProductEvent($product, $product_variation);
-    $this->eventDispatcher->dispatch(EnhancedEcommerceEvents::ALTER_PRODUCT, $event);
+    $this->eventDispatcher->dispatch($event, EnhancedEcommerceEvents::ALTER_PRODUCT);
 
     return $product;
   }

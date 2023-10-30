@@ -72,7 +72,7 @@ class EventStorageService {
 
     if (!isset($events[$hash])) {
       $event = new AlterEventDataEvent($event_data);
-      $this->eventDispatcher->dispatch(EnhancedEcommerceEvents::ALTER_EVENT_DATA, $event);
+      $this->eventDispatcher->dispatch($event, EnhancedEcommerceEvents::ALTER_EVENT_DATA);
       $events[$this->hash($event_data)] = $event->getEventData();
       $this->tempStore->set('events', $events);
     }

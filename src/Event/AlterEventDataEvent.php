@@ -2,7 +2,7 @@
 
 namespace Drupal\commerce_google_tag_manager\Event;
 
-use Symfony\Component\EventDispatcher\Event;
+use Drupal\Component\EventDispatcher\Event;
 
 /**
  * Event to alter Enhanced Ecommerce event data.

@@ -8,7 +8,7 @@ use Drupal\commerce_price\Price;
 use Drupal\commerce_product\Entity\ProductVariation;
 use Drupal\commerce_cart\Event\CartEntityAddEvent;
 use Drupal\commerce_cart\Event\CartOrderItemRemoveEvent;
-use Drupal\Tests\commerce_cart\Traits\CartManagerTestTrait;
+use Drupal\Tests\commerce_cart\Kernel\CartKernelTestBase;
 use Drupal\Tests\commerce_google_tag_manager\Traits\DeprecationSuppressionTrait;
 
 /**
@@ -19,7 +19,7 @@ use Drupal\Tests\commerce_google_tag_manager\Traits\DeprecationSuppressionTrait;
  * @group commerce_google_tag_manager_kernel
  */
 class CartEventTest extends CommerceKernelTestBase {
-  use CartManagerTestTrait;
+  use CartKernelTestBase;
   use DeprecationSuppressionTrait;
 
   /**

@@ -4,7 +4,7 @@ namespace Drupal\commerce_google_tag_manager\Event;
 
 use Drupal\commerce_google_tag_manager\Product;
 use Drupal\commerce_product\Entity\ProductVariationInterface;
-use Symfony\Component\EventDispatcher\Event;
+use Drupal\Component\EventDispatcher\Event;
 
 /**
  * Event to alter the Enhanced Ecommerce product.

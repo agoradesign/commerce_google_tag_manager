@@ -3,7 +3,7 @@
 namespace Drupal\commerce_google_tag_manager\Event;
 
 use Drupal\commerce_order\Entity\OrderInterface;
-use Symfony\Component\EventDispatcher\Event;
+use Drupal\Component\EventDispatcher\Event;
 
 /**
  * Event dispatched when a checkout step is tracked.
